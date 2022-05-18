@@ -9,7 +9,7 @@ ComputerCraftCodeCatalog, a ComputerCraft dependancy manager
 3. Copy/paste the following into the text editor:
 
 ```
-local request = http.get("https://raw.githubusercontent.com/brooswit/codecatalog.cc/master/c4.lua")
+local request = http.get("https://raw.githubusercontent.com/brooswit/c4/master/c4.lua")
 local file = fs.open("c4.lua", "w")
 file.write(request.readAll())
 file.close()
