@@ -1,11 +1,11 @@
 {
-    "c4": "https://raw.githubusercontent.com/brooswit/codecatalog.cc/master/c4.lua",
-    "hello": "https://raw.githubusercontent.com/brooswit/codecatalog.cc/master/hello.lua",
+    "c4": "https://raw.githubusercontent.com/brooswit/c4/main/c4.lua",
+    "hello": "https://raw.githubusercontent.com/brooswit/c4/main/hello.lua",
 
-    "base64": "https://raw.githubusercontent.com/brooswit/c4-common/master/base64.lua",
+    "base64": "https://raw.githubusercontent.com/brooswit/c4-common/main/base64.lua",
 
-    "launchdarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/lib/launchdarkly.lua",
-    "localstorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/lib/localstorage.lua",
+    "launchdarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/lib/launchdarkly.lua",
+    "localstorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/lib/localstorage.lua",
 
-    "ld-redstone-flag": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/app/ld-redstone-flag.lua"
+    "ld-redstone-flag": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/app/ld-redstone-flag.lua"
 }
