@@ -1,5 +1,8 @@
 {
     "c4": "https://raw.githubusercontent.com/brooswit/codecatalog.cc/master/c4.lua",
-    "base64": "https://raw.githubusercontent.com/brooswit/ccc/master/base64.lua",
-    "cooltoggle": "https://raw.githubusercontent.com/brooswit/ccc/master/cooltoggle.lua"
+    "base64": "https://raw.githubusercontent.com/brooswit/c4-common/master/base64.lua",
+    "launchdarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/lib/launchdarkly.lua",
+    "localstorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/lib/localstorage.lua",
+
+    "ld-redstone-flag": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/master/app/ld-redstone-flag.lua"
 }

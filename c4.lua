@@ -25,7 +25,7 @@ local function fetch(name)
     end
 end
 
-function include(name)
+function load(name)
     script = fetch(name)
     if script ~= nil then
         return os.loadString(script)
@@ -34,29 +34,7 @@ function include(name)
     end
 end
 
--- local function install(name)
---     fetch(name)
---     local file = fs.open(name .. ".lua", "w")
---     if file == nil then
---         return false
---     else 
---         file.write(contents)
---         file.close()
---         return true
---     end
--- end
-
--- function include(name)
---     script = fetch(name)
---     if install(name) then
---         os.loadString(name .. ".lua")
---         return true
---     else
---         return false
---     end
--- end
-
 name = args[1]
 if name ~= nil then
-    include(install)
+    load(name)
 end
