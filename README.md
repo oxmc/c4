@@ -20,8 +20,12 @@ file.close()
 4. Press `ctrl`. You should see `Save` and `Exit` along the bottom.
 5. Make sure `Save` is selected and press the `enter` key. This will save the file.
 6. Press `ctrl` again, and select Exit. You should now be taken back to the command-line interface.
-7. Now you can load C4 applications and libraries.
+7. Run the installer: `install_c4"
+
+Now you can load C4 applications and libraries.
 
 ## Usage
+
+`c4 hello`
 
 `c4 <APPLICATION_NAME>`
