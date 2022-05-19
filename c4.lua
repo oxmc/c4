@@ -21,6 +21,7 @@ end
 local function fetchContentAtURL(url)
     local request = http.get(addCacheBusterToURL(url))
     if (request == nil) then
+        print('cannot fetch content at URL. Unable request ' .. url)
         return nil
     end
     local content = request.readAll()
@@ -29,35 +30,45 @@ end
 
 local function fetchCatalog()
     local content = fetchContentAtURL(CATALOG_URL)
-    if content ~= nil then
-        local catalog = textutils.unserialize(content)
-        return catalog
-    else
+    if content == nil then
+        print('cannot fetch catalog')
         return nil
     end
+    local catalog = textutils.unserialize(content)
+    if catalog == nil then
+        print('cannot fetch catalog. Unable unserialize content')
+        return nil
+    end
+    return catalog
 end
 
 local function getURLFromCatalog(name)
     local catalog = fetchCatalog()
+    if catalog == nil then
+        print('cannot URL from catalog. catalog is nil')
+        return nil
+    end
     return catalog[name]
 end
 
 local function fetchContentFromCatalog(name)
     url = getURLFromCatalog(name)
-    if url ~= nil then
-        return fetchContentAtURL(url)
-    else
+    if url == nil then
+        print('cannot fetch content from catalog. URL is nil')
         return nil
     end
+    return fetchContentAtURL(url)
 end
 
 local function loadAPIFromCatalog(name)
     local content = fetchContentFromCatalog(name)
     if content == nil then
+        print('cannot load API from catalog. content is nil')
         return nil
     end
     local file = fs.open(name, "w")
     if file == nil then
+        print('cannot load API from catalog. Unable to open file ' .. name)
         return nil
     end
     file.write(content)
