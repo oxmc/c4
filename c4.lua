@@ -1,5 +1,13 @@
 args = {...}
 
+local function updateC4()
+    local request = http.get(("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua?cb=%x"):format(math.random(0, 2 ^ 30)))
+    local file = fs.open("c4", "w")
+    file.write(request.readAll())
+    file.close()
+end
+updateC4()
+
 CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.json"
 
 -- Computer Craft Code Catalog
