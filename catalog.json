@@ -4,8 +4,11 @@
 
     "base64": "https://raw.githubusercontent.com/brooswit/c4-common/main/base64.lua",
 
-    "launchdarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/lib/launchdarkly.lua",
-    "localstorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/lib/localstorage.lua",
+    "LaunchDarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/libs/LaunchDarkly.lua",
+    "localStorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/libs/localStorage.lua",
 
-    "ld-redstone-flag": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/app/ld-redstone-flag.lua"
+    "ld-config": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-config.lua",
+    "ld-redstone-flag-trigger": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-flag-trigger.lua",
+    "ld-redstone-track-item-count": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-track-item-count.lua",
+    "ld-redstone-variation": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-variation.lua"
 }

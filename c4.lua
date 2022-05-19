@@ -1,37 +1,60 @@
 args = {...}
 
+CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.json"
+
 -- Computer Craft Code Catalog
 
-local function fetchFile(path)
+local addCacheBusterToURL(url)
     local cacheBuster = ("%x"):format(math.random(0, 2 ^ 30))
-    local url = path .. "?cb=" .. cacheBuster
-    local content = http.get(url)
+    local cacheBustedURL = url .. "?cb=" .. cacheBuster
+    return cacheBustedURL
+end
+
+local function fetchContentAtURL(url)
+    local request = http.get(addCacheBusterToURL(url))
+    if (request == nil) then
+        return nil
+    end
+    local content = request.getAll()
     return content
 end
 
-local function fetchPath(name)
-    local cacheBuster = ("%x"):format(math.random(0, 2 ^ 30))
-    local url = "https://codecatalog.cc/" .. filename .. "?cb=" .. cacheBuster
-    local path = http.get(url)
-    return path
-end
-
-local function fetch(name)
-    path = fetchPath(name)
-    if path == nil then
-        return nil
+local function fetchCatalog()
+    local content = fetchContentAtURL(CATALOG_URL)
+    if content ~= nil then
+        local catalog = textutils.unserialize(content)
+        return catalog
     else
-        return fetchFile(path)
+        return nil
     end
 end
 
-function load(name)
-    script = fetch(name)
+local function getURLFromCatalog(name)
+    local catalog = fetchCatalog()
+    return catalog[name]
+end
+
+local function fetchContentFromCatalog(name)
+    url = getURLFromCatalog(name)
+    if url ~= nil then
+        return fetchContentAtURL(url)
+    else
+        return nil
+    end
+end
+
+local function loadContentFromCatalog(name)
+    script = fetchContentFromCatalog(name)
     if script ~= nil then
-        return os.loadString(script)
+        os.loadString(script)
+        return true
     else
-        return nil
+        return false
     end
+end
+
+function loadAPI(name)
+    loadContentFromCatalog(name)
 end
 
 name = args[1]
