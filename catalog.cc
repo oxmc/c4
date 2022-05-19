@@ -8,8 +8,8 @@
 
     LaunchDarkly = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/libs/LaunchDarkly.lua",
 
-    ld-config = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-config.lua",
-    ld-redstone-flag-trigger = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-flag-trigger.lua",
-    ld-redstone-track-item-count = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-track-item-count.lua",
-    ld-redstone-variation = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-variation.lua"
+    ld_config = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld_config.lua",
+    ld_redstone_flag_trigger = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld_redstone_flag_trigger.lua",
+    ld_redstone_track_item_count = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld_redstone_track_item_count.lua",
+    ld_redstone_variation = "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld_redstone_variation.lua"
 }
