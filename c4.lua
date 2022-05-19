@@ -1,16 +1,5 @@
 args = {...}
 
-local function updateC4()
-    local content = fetchContentAtURL("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
-    local file = fs.open("c4", "w")
-    if file == nil then
-        return nil
-    end
-    file.write(content)
-    file.close()
-end
-updateC4()
-
 CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.cc"
 
 -- Computer Craft Code Catalog
@@ -85,6 +74,17 @@ end
 function loadAPI(name)
     loadAPIFromCatalog(name)
 end
+
+local function updateC4()
+    local content = fetchContentAtURL("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
+    local file = fs.open("c4", "w")
+    if file == nil then
+        return nil
+    end
+    file.write(content)
+    file.close()
+end
+updateC4()
 
 name = args[1]
 if name ~= nil then
