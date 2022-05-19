@@ -4,7 +4,7 @@ CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.json"
 
 -- Computer Craft Code Catalog
 
-local addCacheBusterToURL(url)
+local function addCacheBusterToURL(url)
     local cacheBuster = ("%x"):format(math.random(0, 2 ^ 30))
     local cacheBustedURL = url .. "?cb=" .. cacheBuster
     return cacheBustedURL
