@@ -15,7 +15,7 @@ local function fetchContentAtURL(url)
     if (request == nil) then
         return nil
     end
-    local content = request.getAll()
+    local content = request.readAll()
     return content
 end
 

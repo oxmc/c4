@@ -9,7 +9,7 @@ ComputerCraftCodeCatalog, a ComputerCraft dependancy manager
 3. Copy/paste the following into the text editor:
 
 ```
-local request = http.get("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
+local request = http.get(("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua?cb=%x"):format(math.random(0, 2 ^ 30)))
 local file = fs.open("c4", "w")
 file.write(request.readAll())
 file.close()
