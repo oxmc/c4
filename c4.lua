@@ -43,21 +43,25 @@ local function fetchContentFromCatalog(name)
     end
 end
 
-local function loadContentFromCatalog(name)
-    script = fetchContentFromCatalog(name)
-    if script ~= nil then
-        os.loadString(script)
-        return true
-    else
-        return false
+local function loadAPIFromCatalog(name)
+    local content = fetchContentFromCatalog(name)
+    if content == nil then
+        return nil
     end
+    local file = fs.open(name, "w")
+    if file == nil then
+        return nil
+    end
+    file.write(content)
+    file.close()
+    os.loadAPI(name)
 end
 
 function loadAPI(name)
-    loadContentFromCatalog(name)
+    loadAPIFromCatalog(name)
 end
 
 name = args[1]
 if name ~= nil then
-    load(name)
+    loadAPI(name)
 end

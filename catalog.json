@@ -2,10 +2,10 @@
     "c4": "https://raw.githubusercontent.com/brooswit/c4/main/c4.lua",
     "hello": "https://raw.githubusercontent.com/brooswit/c4/main/hello.lua",
 
-    "base64": "https://raw.githubusercontent.com/brooswit/c4-common/main/base64.lua",
+    "base64": "https://raw.githubusercontent.com/brooswit/c4-common/main/libs/base64.lua",
+    "localStorage": "https://raw.githubusercontent.com/brooswit/c4-common/main/libs/localStorage.lua",
 
     "LaunchDarkly": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/libs/LaunchDarkly.lua",
-    "localStorage": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/libs/localStorage.lua",
 
     "ld-config": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-config.lua",
     "ld-redstone-flag-trigger": "https://raw.githubusercontent.com/brooswit/c4-launchdarkly/main/apps/ld-redstone-flag-trigger.lua",

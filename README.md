@@ -10,7 +10,7 @@ ComputerCraftCodeCatalog, a ComputerCraft dependancy manager
 
 ```
 local request = http.get("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
-local file = fs.open("c4.lua", "w")
+local file = fs.open("c4", "w")
 file.write(request.readAll())
 file.close()
 ```
