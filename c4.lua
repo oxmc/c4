@@ -37,6 +37,9 @@ local function fetchCatalog()
     local catalog = textutils.unserialize(content)
     if catalog == nil then
         print('cannot fetch catalog. Unable unserialize content')
+        print('--------')
+        print(content)
+        print('--------')
         return nil
     end
     return catalog
