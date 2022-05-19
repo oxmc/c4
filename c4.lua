@@ -1,14 +1,17 @@
 args = {...}
 
 local function updateC4()
-    local request = http.get(("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua?cb=%x"):format(math.random(0, 2 ^ 30)))
+    local content = fetchContentAtURL("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
     local file = fs.open("c4", "w")
-    file.write(request.readAll())
+    if file == nil then
+        return nil
+    end
+    file.write(content)
     file.close()
 end
 updateC4()
 
-CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.json"
+CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.cc"
 
 -- Computer Craft Code Catalog
 
