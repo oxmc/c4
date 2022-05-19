@@ -72,7 +72,9 @@ local function loadAPIFromCatalog(name)
 end
 
 function loadAPI(name)
+    print("loading " .. name .. "...")
     loadAPIFromCatalog(name)
+    print("... done loading " .. name .. "!")
 end
 
 local function updateC4()
