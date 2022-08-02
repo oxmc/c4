@@ -1,6 +1,6 @@
 # C4
 
-ComputerCraftCodeCatalog, a ComputerCraft dependancy manager
+Computer Craft Code Catalog (C4), a ComputerCraft dependency manager
 
 ## Getting Started
 
