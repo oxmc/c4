@@ -63,8 +63,10 @@ local function loadAPIFromCatalog(name)
         return nil
     end
     if name == "c4" then
-        return
-    local file = fs.open(".c4/apis/"..name, "w")
+        local file = fs.open(".c4/apis/"..name, "w")
+    else
+        local file = fs.open(".c4/"..name, "w")
+    end
     if file == nil then
         print('cannot load API from catalog. Unable to open file ' .. name)
         return nil
