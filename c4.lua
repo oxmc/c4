@@ -95,4 +95,7 @@ updateC4()
 name = args[1]
 if name ~= nil then
     loadAPI(name)
+else
+    print("Usage: c4 <app or lib name>")
+    print("c4 github")
 end
