@@ -62,6 +62,8 @@ local function loadAPIFromCatalog(name)
         print('cannot load API from catalog. content is nil')
         return nil
     end
+    if name == "c4" then
+        return
     local file = fs.open(".c4/apis/"..name, "w")
     if file == nil then
         print('cannot load API from catalog. Unable to open file ' .. name)
