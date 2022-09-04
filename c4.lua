@@ -76,11 +76,12 @@ local function loadAPIFromCatalog(name)
 end
 
 function loadAPI(name)
+    local lapi = loadAPIFromCatalog(name)
     print("loading " .. name .. "...")
-    if loadAPIFromCatalog(name) == true then
+    if lapi == true then
       print("... done loading " .. name .. "!")
     else
-      print("Unable to load".. name)
+      print("Unable to load" .. name .. "!")
     end
 end
 
