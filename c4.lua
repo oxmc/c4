@@ -69,6 +69,9 @@ local function loadAPIFromCatalog(name)
     end
     file.write(content)
     file.close()
+    --if name == "c4" then
+        --shell.run("move .c4/c4 c4")
+    --end
     os.loadAPI(".c4/"..name)
 end
 
