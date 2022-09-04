@@ -1,6 +1,6 @@
 args = {...}
 
-CATALOG_URL = "https://raw.githubusercontent.com/brooswit/c4/main/catalog.cc"
+CATALOG_URL = "https://raw.githubusercontent.com/oxmc/c4/main/catalog.cc"
 
 -- Computer Craft Code Catalog
 
