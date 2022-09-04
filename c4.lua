@@ -14,7 +14,7 @@ end
 local function fetchContentAtURL(url)
     local request = http.get(addCacheBusterToURL(url))
     if (request == nil) then
-        print('cannot fetch content at URL. Unable request ' .. url)
+        print('cannot fetch content at URL. Unable to request ' .. url)
         return nil
     end
     local content = request.readAll()
@@ -29,7 +29,7 @@ local function fetchCatalog()
     end
     local catalog = textutils.unserialize(content)
     if catalog == nil then
-        print('cannot fetch catalog. Unable unserialize content')
+        print('cannot fetch catalog. Unable to unserialize content')
         print('--------')
         print(content)
         print('--------')
@@ -41,7 +41,7 @@ end
 local function getURLFromCatalog(name)
     local catalog = fetchCatalog()
     if catalog == nil then
-        print('cannot URL from catalog. catalog is nil')
+        print('cannot get URL from catalog. catalog is nil')
         return nil
     end
     return catalog[name]
@@ -62,17 +62,14 @@ local function loadAPIFromCatalog(name)
         print('cannot load API from catalog. content is nil')
         return nil
     end
-    local file = fs.open(".c4/apis/"..name, "w")
+    local file = fs.open(".c4/"..name, "w")
     if file == nil then
         print('cannot load API from catalog. Unable to open file ' .. name)
         return nil
     end
     file.write(content)
     file.close()
-    if name == "c4" then
-        shell.run("move .c4/apis/c4 c4")
-    end
-    os.loadAPI(".c4/apis/"..name)
+    os.loadAPI(".c4/"..name)
 end
 
 function loadAPI(name)
