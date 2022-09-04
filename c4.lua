@@ -80,7 +80,7 @@ function loadAPI(name)
     if loadAPIFromCatalog(name) == true then
       print("... done loading " .. name .. "!")
     else
-      print("Unable to load"... name)
+      print("Unable to load".. name)
     end
 end
 
