@@ -1,5 +1,6 @@
 args = {...}
 
+C4_URL = "https://raw.githubusercontent.com/oxmc/c4/main/c4.lua"
 CATALOG_URL = "https://raw.githubusercontent.com/oxmc/c4/main/catalog.cc"
 
 -- Computer Craft Code Catalog
@@ -61,7 +62,7 @@ local function loadAPIFromCatalog(name)
         print('cannot load API from catalog. content is nil')
         return nil
     end
-    local file = fs.open(name, "w")
+    local file = fs.open(".c4/apis/"..name, "w")
     if file == nil then
         print('cannot load API from catalog. Unable to open file ' .. name)
         return nil
@@ -78,7 +79,7 @@ function loadAPI(name)
 end
 
 local function updateC4()
-    local content = fetchContentAtURL("https://raw.githubusercontent.com/brooswit/c4/main/c4.lua")
+    local content = fetchContentAtURL(C4_URL)
     local file = fs.open("c4", "w")
     if file == nil then
         return nil
