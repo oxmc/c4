@@ -62,10 +62,9 @@ local function loadAPIFromCatalog(name)
         print('cannot load API from catalog. content is nil')
         return nil
     end
+    local file = fs.open(".c4/apis/"..name, "w")
     if name == "c4" then
-        local file = fs.open(".c4/apis/"..name, "w")
-    else
-        local file = fs.open(".c4/"..name, "w")
+        shell.run("move .c4/apis/c4 c4")
     end
     if file == nil then
         print('cannot load API from catalog. Unable to open file ' .. name)
