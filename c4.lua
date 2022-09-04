@@ -72,7 +72,7 @@ local function loadAPIFromCatalog(name)
     if name == "c4" then
         shell.run("move .c4/apis/c4 c4")
     end
-    os.loadAPI(name)
+    os.loadAPI(".c4/apis/"..name)
 end
 
 function loadAPI(name)
