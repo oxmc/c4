@@ -1,10 +1,10 @@
+-- Variables
 args = {...}
 
 C4_URL = "https://raw.githubusercontent.com/oxmc/c4/main/c4.lua"
 CATALOG_URL = "https://raw.githubusercontent.com/oxmc/c4/main/catalog.cc"
 
 -- Computer Craft Code Catalog
-
 local function addCacheBusterToURL(url)
     local cacheBuster = ("%x"):format(math.random(0, 2 ^ 30))
     local cacheBustedURL = url .. "?cb=" .. cacheBuster
@@ -77,8 +77,11 @@ end
 
 function loadAPI(name)
     print("loading " .. name .. "...")
-    loadAPIFromCatalog(name)
-    print("... done loading " .. name .. "!")
+    if loadAPIFromCatalog(name) == true then
+      print("... done loading " .. name .. "!")
+    else
+      print("Unable to load"... name)
+    end
 end
 
 local function updateC4()
@@ -92,10 +95,11 @@ local function updateC4()
 end
 updateC4()
 
-name = args[1]
+mode = args[1]
+name = args[2]
 if name ~= nil then
     loadAPI(name)
 else
-    print("Usage: c4 <app or lib name>")
-    print("c4 github")
+    print("Usage: c4 <mode> <app or lib name>")
+    print("c4 install github")
 end
