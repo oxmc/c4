@@ -76,13 +76,13 @@ local function loadAPIFromCatalog(name)
 end
 
 function loadAPI(name)
-    local lapi = loadAPIFromCatalog(name)
     print("loading " .. name .. "...")
-    if lapi == true then
+    local lapi = loadAPIFromCatalog(name)
+    --if lapi == true then
       print("... done loading " .. name .. "!")
-    else
-      print("Unable to load" .. name .. "!")
-    end
+    --else
+    --  print("Unable to load" .. name .. "!")
+    --end
 end
 
 local function updateC4()
