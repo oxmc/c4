@@ -96,11 +96,7 @@ local function updateC4()
 end
 updateC4()
 
-mode = args[1]
-name = args[2]
+name = args[1]
 if name ~= nil then
     loadAPI(name)
-else
-    print("Usage: c4 <mode> <app or lib name>")
-    print("c4 install github")
 end
